@@ -9,6 +9,7 @@
 <body>
     <script>
 
+        /** Generate random rock, paper, or scissors. **/
         function getComputerChoice() {
             let randomNumber = Math.floor(Math.random() * 3);
 
@@ -23,6 +24,12 @@
                     return "scissors";
                     break;
             }
+        }
+
+        /** Get user's choice of rock, paper, or scissors. **/
+        function getHumanChoice() {
+            let choice = prompt("Please enter your choice: rock, paper, or scissors.");
+            return choice;
         }
 
     </script>
