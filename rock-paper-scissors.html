@@ -38,6 +38,7 @@
 
         /** Play a single round of rock, paper, scissors. **/
         function playRound(humanChoice, computerChoice) {
+            humanChoice = humanChoice.toLowerCase();
             if (humanChoice === computerChoice) {
                 return "Draw!";
             } else if ((humanChoice === "paper" && computerChoice === "rock") || 
@@ -50,6 +51,8 @@
                 return `You lose! ${computerChoice} beats ${humanChoice}!`;
             }
         }
+
+        console.log(playRound(getHumanChoice(), getComputerChoice()));
 
     </script>
 </body>
