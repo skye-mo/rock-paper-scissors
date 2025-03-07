@@ -9,6 +9,10 @@
 <body>
     <script>
 
+        /** Global variables for human and computer scores. **/
+        let humanScore = 0;
+        let computerScore = 0;
+
         /** Generate random rock, paper, or scissors. **/
         function getComputerChoice() {
             let randomNumber = Math.floor(Math.random() * 3);
@@ -30,6 +34,21 @@
         function getHumanChoice() {
             let choice = prompt("Please enter your choice: rock, paper, or scissors.");
             return choice;
+        }
+
+        /** Play a single round of rock, paper, scissors. **/
+        function playRound(humanChoice, computerChoice) {
+            if (humanChoice === computerChoice) {
+                return "Draw!";
+            } else if ((humanChoice === "paper" && computerChoice === "rock") || 
+                    (humanChoice === "scissors" && computerChoice === "paper") || 
+                    (humanChoice === "rock" && computerChoice === "scissors")) {
+                humanScore++;
+                return `You win! ${humanChoice} beats ${computerChoice}!`;
+            } else {
+                computerScore++;
+                return `You lose! ${computerChoice} beats ${humanChoice}!`;
+            }
         }
 
     </script>
